@@ -54,3 +54,37 @@ footer {
 .gradient-color {
     background: linear-gradient(to right, #c31800, #fec300);
 }
+
+
+.categories-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    /* Divlar orasidagi bo'shliqni taqsimlash */
+    margin-top: 20px;
+    /* Yozuv va divlar orasidagi masofa */
+}
+
+.category-item {
+    flex: 1;
+    /* Har bir div teng kenglikda bo'lishi uchun */
+    margin: 0 10px;
+    /* Divlar orasidagi masofa */
+    background-color: #f0f0f0;
+    /* Orqa fon rangi */
+    padding: 20px;
+    border-radius: 8px;
+    /* Burchaklarni yumaloqlash */
+    text-align: center;
+    transition: transform 0.3s ease;
+    /* Hover effekti uchun o‘tish */
+    cursor: pointer;
+}
+
+.category-item:hover {
+    transform: scale(1.05);
+    /* Hover bo'lganda kattalashishi */
+    z-index: 1;
+    color: #ea8700;
+    /* Kattalashganda boshqa div ustidan chiqish */
+}
