@@ -6,6 +6,7 @@ import Home from './pages/Home';
 import About from './pages/About';
 import Contact from './pages/Contact';
 import MainLayout from './layout/MainLayout';
+import AllBooks from './pages/AllBooks';
 
 function App() {
   let routes = createBrowserRouter([
@@ -24,6 +25,10 @@ function App() {
         {
           path: `/contact`,
           element: <Contact />
+        },
+        {
+          path: `/all-books`,
+          element: <AllBooks />
         },
       ]
     }
