@@ -1,3 +1,34 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+#root {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+footer {
+    margin-top: auto;
+}
+
+.active-link {
+    background-color: #ea8700;
+    padding-left: 15px;
+    /* x o'qidagi padding */
+    padding-right: 15px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    /* Shunda padding kenglikka ta'sir qilmaydi */
+}
+
+/* Ant Design Menu ning active holatini yo'q qilish uchun */
+.ant-menu-item-selected,
+.ant-menu-item-active {
+    background-color: transparent !important;
+    border-bottom: none !important;
+    color: inherit !important;
+}

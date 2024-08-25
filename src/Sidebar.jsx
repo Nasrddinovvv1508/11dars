@@ -7,41 +7,40 @@ import {
     VideoCameraOutlined,
 } from '@ant-design/icons';
 import { Button, Layout, Menu, theme } from 'antd';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, Outlet } from 'react-router-dom';
 const { Header, Sider, Content } = Layout;
-const App = () => {
+
+const Sidebar = ({ Outlet }) => {
     const [collapsed, setCollapsed] = useState(false);
     const {
         token: { colorBgContainer, borderRadiusLG },
     } = theme.useToken();
-
-    let items = [
-        {
-            key: '1',
-            icon: <UserOutlined />,
-            label: <Link to="/">Home</Link>,
-        },
-        {
-            key: '2',
-            icon: <VideoCameraOutlined />,
-            label: <Link to="/about">About</Link>,
-        },
-        {
-            key: '3',
-            icon: <UploadOutlined />,
-            label: <Link to={`/contact`}>Contact</Link>,
-        },
-    ]
-
     return (
-        <Layout>
-            <Sider trigger={null} collapsible collapsed={collapsed}>
-                <div className="demo-logo-vertical" />
+        <Layout className='h-screen bg-red-800'>
+            <Sider className='bg-red-700 w-[500px]' trigger={null} collapsible collapsed={collapsed}>
+                <div className="demo-logo-vertical w-[300px]" />
                 <Menu
+                    className='pt-[30px]'
                     theme="dark"
                     mode="inline"
                     defaultSelectedKeys={['1']}
-                    items={items}
+                    items={[
+                        {
+                            key: '1',
+                            icon: <UserOutlined />,
+                            label: <Link to="/">Home</Link>,
+                        },
+                        {
+                            key: '2',
+                            icon: <VideoCameraOutlined />,
+                            label: <Link to="/about">About</Link>,
+                        },
+                        {
+                            key: '3',
+                            icon: <UploadOutlined />,
+                            label: <Link to={`/contact`}>Contact</Link>,
+                        },
+                    ]}
                 />
             </Sider>
             <Layout>
@@ -71,10 +70,11 @@ const App = () => {
                         borderRadius: borderRadiusLG,
                     }}
                 >
-                    Content
+                    {Outlet}
                 </Content>
             </Layout>
         </Layout>
     );
-};
-export default App;
+}
+
+export default Sidebar;
