@@ -1,16 +1,50 @@
-<!doctype html>
-<html lang="en">
-
+<!DOCTYPE html>
+<html lang="uz">
 <head>
-  <meta charset="UTF-8" />
-  <link rel="shortcut icon" href="./public/assets/favico.png" type="image/x-icon">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Knowledge Source</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalkulyator</title>
+    <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-  <div id="root"></div>
-  <script type="module" src="/src/main.jsx"></script>
+    <div class="container">
+        <div class="calculator">
+            <div class="display">
+                <input type="text" id="display" readonly placeholder="0">
+            </div>
+            
+            <div class="buttons">
+                <!-- Row 1 -->
+                <button class="btn clear" onclick="clearDisplay()">C</button>
+                <button class="btn operator" onclick="deleteLast()">←</button>
+                <button class="btn operator" onclick="appendToDisplay('/')">/</button>
+                <button class="btn operator" onclick="appendToDisplay('*')">×</button>
+                
+                <!-- Row 2 -->
+                <button class="btn number" onclick="appendToDisplay('7')">7</button>
+                <button class="btn number" onclick="appendToDisplay('8')">8</button>
+                <button class="btn number" onclick="appendToDisplay('9')">9</button>
+                <button class="btn operator" onclick="appendToDisplay('-')">-</button>
+                
+                <!-- Row 3 -->
+                <button class="btn number" onclick="appendToDisplay('4')">4</button>
+                <button class="btn number" onclick="appendToDisplay('5')">5</button>
+                <button class="btn number" onclick="appendToDisplay('6')">6</button>
+                <button class="btn operator" onclick="appendToDisplay('+')">+</button>
+                
+                <!-- Row 4 -->
+                <button class="btn number" onclick="appendToDisplay('1')">1</button>
+                <button class="btn number" onclick="appendToDisplay('2')">2</button>
+                <button class="btn number" onclick="appendToDisplay('3')">3</button>
+                <button class="btn equals" onclick="calculate()" rowspan="2">=</button>
+                
+                <!-- Row 5 -->
+                <button class="btn number zero" onclick="appendToDisplay('0')">0</button>
+                <button class="btn number" onclick="appendToDisplay('.')">.</button>
+            </div>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
 </body>
-
 </html>
